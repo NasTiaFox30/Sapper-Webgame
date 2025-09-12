@@ -28,7 +28,7 @@ export default function App() {
       
       {gameStatus === 'lose' && (
         <div className="game-message lose">
-          <h2>You were cought!</h2>
+          <h2>You lose!</h2>
           <button onClick={handleNewGame}>Retry!</button>
         </div>
       )}
