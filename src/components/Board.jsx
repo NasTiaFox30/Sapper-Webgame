@@ -83,7 +83,24 @@ export default function Board({ rows, cols, mines, onGameOver, onWin, onReset })
         return;
         }
 
-        // Recursive reveal - TODO
+        // Recursive reveal:
+        const reveal = (r, c) => {
+        if (r < 0 || r >= rows || c < 0 || c >= cols || 
+            newBoard[r][c].isRevealed || newBoard[r][c].isFlagged) {
+            return;
+        }
+
+        newBoard[r][c].isRevealed = true;
+
+        if (newBoard[r][c].mineCount === 0) {
+            // reveal neighbour cells
+            directions.forEach(([dx, dy]) => {
+            reveal(r + dx, c + dy);
+            });
+        }
+        };
+
+        reveal(row, col);
 
         setBoard(newBoard);
         checkWinCondition(newBoard);
