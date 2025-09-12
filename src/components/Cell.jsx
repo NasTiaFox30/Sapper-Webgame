@@ -7,5 +7,12 @@ export default function Cell({ cell, onClick, onContextMenu }) {
     }
   };
 
+  const handleRightClick = (e) => {
+    e.preventDefault();
+    if (!cell.isRevealed) {
+      onContextMenu();
+    }
+  };
 
+  
 };
