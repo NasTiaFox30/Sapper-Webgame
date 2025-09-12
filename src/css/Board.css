@@ -1,0 +1,50 @@
+.board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    font-weight: bold;
+}
+
+.reset-btn {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.reset-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.1);
+}
+
+.reset-image {
+    object-fit: cover;
+    width: 30px;
+    height: 30px;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.row {
+    display: flex;
+    gap: 1px;
+}
