@@ -69,4 +69,24 @@ export default function Board({ rows, cols, mines, onGameOver, onWin, onReset })
         return newBoard;
     };
 
+    const revealCell = (row, col) => {
+        if (gameOver || board[row][col].isRevealed || board[row][col].isFlagged) {
+        return;
+        }
+
+        const newBoard = JSON.parse(JSON.stringify(board));
+        
+        if (newBoard[row][col].isMine) {
+        setGameOver(true);
+        revealAllMines(newBoard);
+        onGameOver(false); //LOSE
+        return;
+        }
+
+        // Recursive reveal - TODO
+
+        setBoard(newBoard);
+        // checkWinCondition(newBoard);
+    };
+
 };
