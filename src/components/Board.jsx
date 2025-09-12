@@ -89,4 +89,21 @@ export default function Board({ rows, cols, mines, onGameOver, onWin, onReset })
         // checkWinCondition(newBoard);
     };
 
+    const checkWinCondition = (board) => {
+        let unrevealedSafeCells = 0;
+        
+        for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+            if (!board[row][col].isRevealed && !board[row][col].isMine) {
+            unrevealedSafeCells++;
+            }
+        }
+        }
+        
+        if (unrevealedSafeCells === 0) {
+        setGameOver(true);
+        onWin(true); // WIN
+        }
+    };
+
 };
