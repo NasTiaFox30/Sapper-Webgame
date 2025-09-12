@@ -101,6 +101,18 @@ export default function Board({ rows, cols, mines, onGameOver, onWin, onReset })
         setBoard(newBoard);
     };
 
+    const toggleFlag = (row, col) => {
+        if (gameOver || board[row][col].isRevealed) {
+        return;
+        }
+
+        const newBoard = JSON.parse(JSON.stringify(board));
+        newBoard[row][col].isFlagged = !newBoard[row][col].isFlagged;
+        
+        setBoard(newBoard);
+        setFlags(prev => newBoard[row][col].isFlagged ? prev + 1 : prev - 1);
+    };
+
     const checkWinCondition = (board) => {
         let unrevealedSafeCells = 0;
         
