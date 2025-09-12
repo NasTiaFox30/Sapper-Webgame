@@ -1,0 +1,26 @@
+.cell {
+    width: 60px;
+    height: 60px;
+    border: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 30px;
+    background-size: cover;
+    transition: all 0.1s;
+    box-shadow: 4px 4px #000000;
+}
+
+.cell-image {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+}
+
+.cell-image.number {
+    width: 60px;
+    height: 60px;
+    object-fit: none;
+}
