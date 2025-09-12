@@ -18,5 +18,21 @@ export default function Board({ rows, cols, mines, onGameOver, onWin, onReset })
     );
   };
 
-  
+  const placeMines = (board) => {
+    let minesPlaced = 0;
+    const newBoard = JSON.parse(JSON.stringify(board));
+    
+    while (minesPlaced < mines) {
+      const row = Math.floor(Math.random() * rows);
+      const col = Math.floor(Math.random() * cols);
+      
+      if (!newBoard[row][col].isMine) {
+        newBoard[row][col].isMine = true;
+        minesPlaced++;
+      }
+    }
+    
+    return newBoard;
+  };
+
 };
