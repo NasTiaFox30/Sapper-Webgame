@@ -33,7 +33,7 @@ export default function App() {
         </div>
       )}
 
-      {gameStatus === "playing" && (
+      {(gameStatus === "playing" || gameStatus === "lose") && (
         <Board 
           key={resetKey}
           rows={9} 
