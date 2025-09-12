@@ -86,7 +86,7 @@ export default function Board({ rows, cols, mines, onGameOver, onWin, onReset })
         // Recursive reveal - TODO
 
         setBoard(newBoard);
-        // checkWinCondition(newBoard);
+        checkWinCondition(newBoard);
     };
 
     const revealAllMines = (board) => {
