@@ -12,6 +12,21 @@ export default function Board({ rows, cols, mines, onGameOver, onWin, onReset })
         [1, -1],  [1, 0],  [1, 1]
     ];
 
+    // Initialization (Start):
+    useEffect(() => {
+        initializeGame();
+    }, [onReset]);
+
+
+    const initializeGame = () => {
+        const newBoard = createNewBoard();
+        const boardWithMines = placeMines(newBoard);
+        const boardWithNumbers = calculateNumbers(boardWithMines);
+        setBoard(boardWithNumbers);
+        setGameOver(false);
+        setFlags(0);
+    };
+
     const createNewBoard = () => {
         return Array(rows).fill().map(() => 
         Array(cols).fill().map(() => ({
