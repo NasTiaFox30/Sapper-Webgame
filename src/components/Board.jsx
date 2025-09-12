@@ -6,6 +6,11 @@ export default function Board({ rows, cols, mines, onGameOver, onWin, onReset })
     const [board, setBoard] = useState([]);
     const [gameOver, setGameOver] = useState(false);
     const [flags, setFlags] = useState(0);
+    const directions = [
+        [-1, -1], [-1, 0], [-1, 1],
+        [0, -1],           [0, 1],
+        [1, -1],  [1, 0],  [1, 1]
+    ];
 
     const createNewBoard = () => {
         return Array(rows).fill().map(() => 
