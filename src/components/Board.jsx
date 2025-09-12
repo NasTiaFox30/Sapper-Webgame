@@ -89,6 +89,18 @@ export default function Board({ rows, cols, mines, onGameOver, onWin, onReset })
         // checkWinCondition(newBoard);
     };
 
+    const revealAllMines = (board) => {
+        const newBoard = JSON.parse(JSON.stringify(board));
+        for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+            if (newBoard[row][col].isMine) {
+            newBoard[row][col].isRevealed = true;
+            }
+        }
+        }
+        setBoard(newBoard);
+    };
+
     const checkWinCondition = (board) => {
         let unrevealedSafeCells = 0;
         
