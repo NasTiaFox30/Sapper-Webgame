@@ -10,6 +10,9 @@ export default function App() {
   const [theme, setTheme] = useState('cybersweeper');
   const [themeAssets, setThemeAssets] = useState({});
   const [assetsLoaded, setAssetsLoaded] = useState(false);
+  const [boardSize, setBoardSize] = useState({ rows: 9, cols: 9 });
+  const [isMobile, setIsMobile] = useState(false);
+  const [showThemeSelector, setShowThemeSelector] = useState(false);
 
   useEffect(() => {
     const loadAssets = async () => {
@@ -27,6 +30,54 @@ export default function App() {
     loadAssets();
   }, [theme]);
 
+  useEffect(() => {
+    const calculateBoardSize = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      
+      const isMobileDevice = width <= 1024;
+      setIsMobile(isMobileDevice);
+
+      const isPortrait = height > width;
+
+      if (isMobileDevice) {
+        if (isPortrait) {
+          if (height <= 680) {
+            return { rows: 8, cols: 6 };
+          } else if (height <= 800) {
+            return { rows: 9, cols: 6 };
+          } else {
+            return { rows: 10, cols: 6 };
+          }
+        } else {
+          return { rows: 8, cols: 10 };
+        }
+      } else {
+        if (width <= 1280) {
+          return { rows: 9, cols: 9 };
+        } else if (width <= 1920) {
+          return { rows: 12, cols: 12 };
+        } else {
+          return { rows: 16, cols: 16 };
+        }
+      }
+    };
+
+    const handleResize = () => {
+      setTimeout(() => {
+        setBoardSize(calculateBoardSize());
+      }, 100);
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const handleGameOver = (isWin) => {
     setGameStatus(isWin ? 'win' : 'lose');
   };
@@ -38,11 +89,24 @@ export default function App() {
 
   const handleThemeChange = (newTheme) => {
     setTheme(newTheme);
+    if (isMobile) {
+      setShowThemeSelector(false);
+    }
   };
+
+  const toggleThemeSelector = () => {
+    if (isMobile) {
+      setShowThemeSelector(prev => !prev);
+    }
+  };
+
+  const minesCount = Math.floor((boardSize.rows * boardSize.cols) * 0.15);
 
   return (
     <div className={`app theme-${theme}`}>
-      <h1>{themesConfig[theme]?.name}</h1>
+      <h1 onClick={toggleThemeSelector}>
+        {themesConfig[theme]?.name}
+      </h1>
       
       {gameStatus === 'win' && (
         <div className="game-message win">
@@ -57,15 +121,17 @@ export default function App() {
           <button onClick={handleNewGame}>Retry!</button>
         </div>
       )}
-       
-      <ThemeSelector currentTheme={theme} onThemeChange={handleThemeChange} />
+      
+      {(!isMobile || showThemeSelector) && (
+        <ThemeSelector currentTheme={theme} onThemeChange={handleThemeChange} />
+      )}
       
       {assetsLoaded && (
         <Board 
-          key={resetKey}
-          rows={9} 
-          cols={9} 
-          mines={10} 
+          key={`${resetKey}-${boardSize.rows}-${boardSize.cols}`}
+          rows={boardSize.rows} 
+          cols={boardSize.cols} 
+          mines={minesCount}
           onGameOver={() => handleGameOver(false)}
           onWin={() => handleGameOver(true)}
           theme={theme}
