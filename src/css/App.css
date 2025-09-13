@@ -1,3 +1,6 @@
+@import '../themes/CyberSweeper.css';
+@import '../themes/MeowMine.css';
+
 .app {
     height: 100%;
     display: flex;
