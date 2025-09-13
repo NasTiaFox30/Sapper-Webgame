@@ -86,6 +86,7 @@ export default function Board({ rows, cols, mines, onGameOver, onWin, theme, the
     };
 
     const revealCell = (row, col) => {
+        if (!gameStarted) setGameStarted(true);
         if (gameOver || board[row][col].isRevealed || board[row][col].isFlagged) {
         return;
         }
