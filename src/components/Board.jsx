@@ -25,6 +25,7 @@ export default function Board({ rows, cols, mines, onGameOver, onWin, theme, the
         setBoard(boardWithNumbers);
         setGameOver(false);
         setFlags(0);
+        setGameStarted(false);
     };
 
     const createNewBoard = () => {
