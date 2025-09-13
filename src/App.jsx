@@ -9,6 +9,7 @@ export default function App() {
   const [resetKey, setResetKey] = useState(0);
   const [theme, setTheme] = useState('cybersweeper');
   const [themeAssets, setThemeAssets] = useState({});
+  const [themeAudio, setThemeAudio] = useState({});
   const [assetsLoaded, setAssetsLoaded] = useState(false);
   const [boardSize, setBoardSize] = useState({ rows: 9, cols: 9 });
   const [isMobile, setIsMobile] = useState(false);
