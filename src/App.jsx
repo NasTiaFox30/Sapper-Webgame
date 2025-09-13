@@ -53,8 +53,10 @@ export default function App() {
           <button onClick={handleNewGame}>Retry!</button>
         </div>
       )}
-
-      {(gameStatus === "playing" || gameStatus === "lose") && (
+       
+      <ThemeSelector currentTheme={theme} onThemeChange={handleThemeChange} />
+      
+      {assetsLoaded && (
         <Board 
           key={resetKey}
           rows={9} 
