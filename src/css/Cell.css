@@ -1,25 +1,103 @@
 .cell {
-    width: 60px;
-    height: 60px;
     border: 2px solid;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     font-weight: bold;
-    font-size: 30px;
     background-size: cover;
     transition: all 0.1s;
+    font-size: 30px;
+}
+
+/* 💻 Desktop (more 1920px) - 16x16 */
+@media (min-width: 1921px) {
+    .cell {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* 💻 Desktop (1281px - 1920px) - 12x12 */
+@media (min-width: 1281px) and (max-width: 1920px) {
+    .cell {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* 💻 Small screens (1025px - 1280px) - 9x9 */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .cell {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* 📱 Tablet - landscape (1024px - 769px) - 9x12 */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+    .cell {
+        width: calc((100vh - 120px) / 9);
+        height: calc((100vh - 120px) / 9);
+        font-size: calc((100vh - 120px) / 18);
+    }
+}
+
+/* 📱 Tablet - portret (1024px - 769px) - 12x9 */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+    .cell {
+        width: calc((100vw - 22px) / 9);
+        height: calc((100vw - 22px) / 9);
+        font-size: calc((100vw - 22px) / 18);
+    }
+}
+
+/* 📱 Phone - landscape (768px - 481px) - 6x10 */
+@media (max-width: 768px) and (orientation: landscape) {
+    .cell {
+        width: calc((100vh - 100px) / 6);
+        /* Використовуємо висоту вікна */
+        height: calc((100vh - 100px) / 6);
+        font-size: calc((100vh - 100px) / 12);
+    }
+}
+
+/* 📱 Big phones - portret (768px - 481px) - 10x8 */
+@media (max-width: 768px) and (orientation: portrait) {
+    .cell {
+        width: calc((100vw - 22px) / 8);
+        /* 22px = 10px*2 (padding) + 1px*2 (gap) */
+        height: calc((100vw - 22px) / 8);
+        font-size: calc((100vw - 22px) / 16);
+    }
+}
+
+/* 📱 Midle phones (under 800px) - 9x7 */
+@media (max-width: 800px) and (orientation: portrait) {
+    .cell {
+        width: calc((100vw - 22px) / 7);
+        height: calc((100vw - 22px) / 7);
+        font-size: calc((100vw - 22px) / 14);
+    }
+}
+
+/* 📱 Smaller phones (under 680px) - 8x6 */
+@media (max-width: 680px) and (orientation: portrait) {
+    .cell {
+        width: calc((100vw - 22px) / 6);
+        height: calc((100vw - 22px) / 6);
+        font-size: calc((100vw - 22px) / 12);
+    }
 }
 
 .cell-image {
-    width: 55px;
-    height: 55px;
-    object-fit: cover;
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
 }
 
 .cell-image.number {
-    width: 60px;
-    height: 60px;
+    width: 100%;
+    height: 100%;
     object-fit: none;
 }

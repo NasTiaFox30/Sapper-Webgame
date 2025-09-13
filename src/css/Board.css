@@ -2,19 +2,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    padding: 20px;
+    gap: 1px;
+    padding: 10px;
     border-radius: 10px;
     backdrop-filter: blur(10px);
 }
 
 .game-info {
+    height: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 300px;
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .reset-btn {
