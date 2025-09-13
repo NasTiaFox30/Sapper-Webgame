@@ -36,6 +36,10 @@ export default function App() {
     setResetKey(prevKey => prevKey + 1);
   };
 
+  const handleThemeChange = (newTheme) => {
+    setTheme(newTheme);
+  };
+
   return (
     <div className="app">
       <h1>Sapper</h1>
