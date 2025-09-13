@@ -4,9 +4,11 @@
 }
 
 /* Board.css */
-.app.theme-meowmine .board {
-    background-color: rgba(21, 15, 4, 0.5);
-    border: 2px solid rgb(44, 28, 6);
+@media (min-width: 1024px) {
+    .app.theme-meowmine .board {
+        background-color: rgba(21, 15, 4, 0.5);
+        border: 2px solid rgb(44, 28, 6);
+    }
 }
 
 .app.theme-meowmine .game-info {

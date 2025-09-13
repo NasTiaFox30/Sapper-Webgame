@@ -4,9 +4,11 @@
 }
 
 /* Board.css */
-.app.theme-cybersweeper .board {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid gold;
+@media (min-width: 1024px) {
+    .app.theme-cybersweeper .board {
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 1px solid gold;
+    }
 }
 
 .app.theme-cybersweeper .game-info {
