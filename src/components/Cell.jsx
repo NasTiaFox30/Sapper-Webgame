@@ -1,6 +1,6 @@
 import '../css/Cell.css';
 
-export default function Cell({ cell, onClick, onContextMenu }) {
+export default function Cell({ cell, onClick, onContextMenu, theme, themeAssets }) {  
   const handleClick = () => {
     if (!cell.isRevealed && !cell.isFlagged) {
       onClick();
