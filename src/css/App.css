@@ -1,5 +1,6 @@
 @import '../themes/CyberSweeper.css';
 @import '../themes/MeowMine.css';
+@import '../themes/Classic.css';
 
 .app {
     height: 100%;
