@@ -60,3 +60,59 @@
     background-color: #664a36;
     color: #000;
 }
+
+/* Number */
+.cell.theme-meowmine.revealed {
+    background: url('/src/assets/sprites/meowmine/revealed_cell.png') center/cover;
+    filter: brightness(1.2);
+    color: transparent;
+}
+
+/* Number textures for MeowMine theme */
+.cell.theme-meowmine.number-1 {
+    background: url('/src/assets/sprites/meowmine/1.png') center/cover,
+        url('/src/assets/sprites/meowmine/revealed_cell.png') center/cover;
+    color: transparent;
+}
+
+.cell.theme-meowmine.number-2 {
+    background: url('/src/assets/sprites/meowmine/2.png') center/cover,
+        url('/src/assets/sprites/meowmine/revealed_cell.png') center/cover;
+    color: transparent;
+}
+
+.cell.theme-meowmine.number-3 {
+    background: url('/src/assets/sprites/meowmine/3.png') center/cover,
+        url('/src/assets/sprites/meowmine/revealed_cell.png') center/cover;
+    color: transparent;
+}
+
+.cell.theme-meowmine.number-4 {
+    background: url('/src/assets/sprites/meowmine/4.png') center/cover,
+        url('/src/assets/sprites/meowmine/revealed_cell.png') center/cover;
+    color: transparent;
+}
+
+.cell.theme-meowmine.number-5 {
+    background: url('/src/assets/sprites/meowmine/5.png') center/cover,
+        url('/src/assets/sprites/meowmine/revealed_cell.png') center/cover;
+    color: transparent;
+}
+
+.cell.theme-meowmine.number-6 {
+    background: url('/src/assets/sprites/meowmine/6.png') center/cover,
+        url('/src/assets/sprites/meowmine/revealed_cell.png') center/cover;
+    color: transparent;
+}
+
+.cell.theme-meowmine.number-7 {
+    background: url('/src/assets/sprites/meowmine/7.png') center/cover,
+        url('/src/assets/sprites/meowmine/revealed_cell.png') center/cover;
+    color: transparent;
+}
+
+.cell.theme-meowmine.number-8 {
+    background: url('/src/assets/sprites/meowmine/8.png') center/cover,
+        url('/src/assets/sprites/meowmine/revealed_cell.png') center/cover;
+    color: transparent;
+}
