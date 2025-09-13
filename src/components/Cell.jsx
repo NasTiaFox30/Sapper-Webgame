@@ -17,16 +17,22 @@ export default function Cell({ cell, onClick, onContextMenu, theme, themeAssets 
   const getCellContent = () => {
     if (cell.isRevealed) {
       if (cell.isMine) {
-        return '💣';
+        return themeAssets?.bomb ? (
+          <img src={themeAssets.bomb} alt="💣" className="cell-image" />
+        ) : '💣';
       }
       return cell.mineCount > 0 ? cell.mineCount : ''; // Number or Empty
     }
-    return cell.isFlagged ? '🚩' : ''; // Flag or Empty
+    return cell.isFlagged ? (
+      themeAssets?.flag ? (
+        <img src={themeAssets.flag} alt="🚩" className="cell-image" />
+      ) : '🚩'
+    ) : '';
   };
 
   return (
     <div
-      className={`cell ${cell.isRevealed ? 'revealed' : ''} ${cell.isFlagged ? 'flagged' : ''}`}
+      className={getCellClass()}
       onClick={handleClick}
       onContextMenu={handleRightClick}
     >
