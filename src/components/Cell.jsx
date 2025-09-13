@@ -30,6 +30,15 @@ export default function Cell({ cell, onClick, onContextMenu, theme, themeAssets 
     ) : '';
   };
 
+  const getCellClass = () => {
+    let className = `cell theme-${theme}`;
+    if (cell.isRevealed) className += ' revealed';
+    if (cell.isFlagged) className += ' flagged';
+    if (cell.isMine && cell.isRevealed) className += ' mine';
+    if (cell.mineCount > 0 && cell.isRevealed) className += ` number-${cell.mineCount}`;
+    return className;
+  };
+
   return (
     <div
       className={getCellClass()}
