@@ -41,8 +41,8 @@ export default function App() {
   };
 
   return (
-    <div className="app">
-      <h1>Sapper</h1>
+    <div className={`app theme-${theme}`}>
+      <h1>{themesConfig[theme]?.name}</h1>
       
       {gameStatus === 'win' && (
         <div className="game-message win">
