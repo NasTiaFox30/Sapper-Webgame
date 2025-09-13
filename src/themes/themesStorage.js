@@ -32,7 +32,7 @@ export const themesConfig = {
   },
   classic: {
     name: 'Classic',
-    preview: '🎮',
+    preview: '🚩',
     assets: {
       // used classic icons
     },
