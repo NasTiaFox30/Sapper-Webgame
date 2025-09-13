@@ -7,6 +7,25 @@ import { themesConfig, getThemeAssets } from './themes/themesStorage';
 export default function App() {
   const [gameStatus, setGameStatus] = useState('playing');
   const [resetKey, setResetKey] = useState(0);
+  const [theme, setTheme] = useState('cybersweeper');
+  const [themeAssets, setThemeAssets] = useState({});
+  const [assetsLoaded, setAssetsLoaded] = useState(false);
+
+  useEffect(() => {
+    const loadAssets = async () => {
+      try {
+        setAssetsLoaded(false);
+        const assets = await getThemeAssets(theme);
+        setThemeAssets(assets);
+        setAssetsLoaded(true);
+      } catch (error) {
+        console.error('Failed to load theme assets:', error);
+        setAssetsLoaded(true);
+      }
+    };
+
+    loadAssets();
+  }, [theme]);
 
   const handleGameOver = (isWin) => {
     setGameStatus(isWin ? 'win' : 'lose');
