@@ -68,6 +68,8 @@ export default function App() {
           mines={10} 
           onGameOver={() => handleGameOver(false)}
           onWin={() => handleGameOver(true)}
+          theme={theme}
+          themeAssets={themeAssets}
         />
       )}
     </div>
