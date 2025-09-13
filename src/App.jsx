@@ -20,7 +20,9 @@ export default function App() {
       try {
         setAssetsLoaded(false);
         const assets = await getThemeAssets(theme);
+        const audio = await getThemeAudio(theme);
         setThemeAssets(assets);
+        setThemeAudio(audio);
         setAssetsLoaded(true);
       } catch (error) {
         console.error('Failed to load theme assets:', error);
