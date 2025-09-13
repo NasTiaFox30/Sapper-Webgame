@@ -10,7 +10,6 @@
     font-size: 30px;
     background-size: cover;
     transition: all 0.1s;
-    box-shadow: 4px 4px #000000;
 }
 
 .cell-image {
