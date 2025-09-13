@@ -16,8 +16,7 @@ export default function Board({ rows, cols, mines, onGameOver, onWin, theme, the
     // Initialization (Start):
     useEffect(() => {
         initializeGame();
-    }, [onReset]);
-
+    }, []);
 
     const initializeGame = () => {
         const newBoard = createNewBoard();
