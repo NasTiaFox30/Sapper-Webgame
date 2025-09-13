@@ -6,6 +6,7 @@ export default function Board({ rows, cols, mines, onGameOver, onWin, theme, the
     const [board, setBoard] = useState([]);
     const [gameOver, setGameOver] = useState(false);
     const [flags, setFlags] = useState(0);
+    const [gameStarted, setGameStarted] = useState(false);
     const directions = [
         [-1, -1], [-1, 0], [-1, 1],
         [0, -1],           [0, 1],
