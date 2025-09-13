@@ -1,0 +1,178 @@
+/* App.css */
+.app.theme-classic {
+    background: #f0f8ff;
+}
+
+.app.theme-dark {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+}
+
+.app.theme-classic h1 {
+    color: #2c3e50;
+}
+
+.app.theme-dark h1 {
+    color: #e0e0ff;
+}
+
+.app.theme-classic .game-message.win {
+    background-color: rgba(212, 237, 218, 0.9);
+    color: #155724;
+    border: 2px solid #c3e6cb;
+}
+
+.app.theme-classic .game-message.lose {
+    background-color: rgba(248, 215, 218, 0.9);
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+}
+
+.app.theme-dark .game-message.win {
+    background-color: rgba(40, 80, 40, 0.9);
+    color: #a0ffa0;
+    border: 2px solid #60c060;
+}
+
+.app.theme-dark .game-message.lose {
+    background-color: rgba(80, 40, 40, 0.9);
+    color: #ffa0a0;
+    border: 2px solid #c06060;
+}
+
+.app.theme-classic .game-message button {
+    background-color: #007bff;
+    color: white;
+}
+
+.app.theme-dark .game-message button {
+    background-color: #5c88ff;
+    color: white;
+}
+
+/* Board.css */
+@media (min-width: 1024px) {
+    .app.theme-classic .board {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 2px solid #a0a0a0;
+    }
+}
+
+.app.theme-dark .board {
+    background-color: rgba(40, 40, 60, 0.8);
+    border: 2px solid #555;
+}
+
+.app.theme-classic .game-info {
+    color: #2c3e50;
+}
+
+.app.theme-dark .game-info {
+    color: #e0e0ff;
+}
+
+.app.theme-classic .reset-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.app.theme-dark .reset-btn {
+    background-color: #5c88ff;
+    color: white;
+}
+
+/* Cell.css */
+
+.cell.theme-classic {
+    margin: 1px;
+    border-color: #808080;
+    background: linear-gradient(145deg, #c0c0c0, #e0e0e0);
+    box-shadow: inset -2px -2px 2px #808080, inset 2px 2px 2px #ffffff;
+}
+
+.cell.theme-classic.revealed {
+    background: #d0d0d0;
+    box-shadow: inset 2px 2px 2px #a0a0a0;
+}
+
+.cell.theme-dark {
+    border-color: #444;
+    background: linear-gradient(145deg, #2a2a2a, #3a3a3a);
+    box-shadow: inset -2px -2px 2px #222, inset 2px 2px 2px #555;
+}
+
+.cell.theme-dark.revealed {
+    background: #333;
+    box-shadow: inset 2px 2px 2px #222;
+    color: #fff;
+}
+
+/* Number colors for classic theme */
+.cell.theme-classic.number-1 {
+    color: blue;
+}
+
+.cell.theme-classic.number-2 {
+    color: green;
+}
+
+.cell.theme-classic.number-3 {
+    color: red;
+}
+
+.cell.theme-classic.number-4 {
+    color: darkblue;
+}
+
+.cell.theme-classic.number-5 {
+    color: brown;
+}
+
+.cell.theme-classic.number-6 {
+    color: teal;
+}
+
+.cell.theme-classic.number-7 {
+    color: black;
+}
+
+.cell.theme-classic.number-8 {
+    color: gray;
+}
+
+/* Number */
+.cell.theme-dark.number-1 {
+    color: #5c88ff;
+}
+
+.cell.theme-dark.number-2 {
+    color: #5cd45c;
+}
+
+.cell.theme-dark.number-3 {
+    color: #ff5555;
+}
+
+.cell.theme-dark.number-4 {
+    color: #8888ff;
+}
+
+.cell.theme-dark.number-5 {
+    color: #d46c5c;
+}
+
+.cell.theme-dark.number-6 {
+    color: #5cd4d4;
+}
+
+.cell.theme-dark.number-7 {
+    color: #d4d4d4;
+}
+
+.cell.theme-dark.number-8 {
+    color: #a0a0a0;
+}
+
+.cell:not(.revealed):hover {
+    filter: brightness(1.1);
+}
