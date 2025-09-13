@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Board from './components/Board';
 import ThemeSelector from './components/ThemeSelector';
 import './css/App.css';
-import { themesConfig, getThemeAssets } from './themes/themesStorage';
+import { themesConfig, getThemeAssets, getThemeAudio } from './themes/themesStorage';
 
 export default function App() {
   const [gameStatus, setGameStatus] = useState('playing');
