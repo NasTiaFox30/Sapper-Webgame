@@ -81,8 +81,19 @@ export default function App() {
     };
   }, []);
 
+// play sounds
+  const playSound = (soundFile) => {
+    const audio = new Audio(soundFile);
+    audio.play().catch(error => console.error("Audio playback failed:", error));
+  };
+
   const handleGameOver = (isWin) => {
     setGameStatus(isWin ? 'win' : 'lose');
+    if (isWin) {
+      playSound(themeAudio.win);
+    } else {
+      playSound(themeAudio.lose);
+    }
   };
 
   const handleNewGame = () => {
