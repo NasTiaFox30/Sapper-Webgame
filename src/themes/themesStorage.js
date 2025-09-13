@@ -25,8 +25,8 @@ export const themesConfig = {
       reset: import('../assets/sprites/meowmine/reset.png'),
     },
     sounds: {
-      win: import('../assets/audio/cybersweeper/win.mp3'),
-      lose: import('../assets/audio/cybersweeper/lose.mp3'),
+      win: import('../assets/audio/meowmine/win.mp3'),
+      lose: import('../assets/audio/meowmine/lose.wav'),
     },
     styles: 'meowmine' //css
   },
