@@ -165,25 +165,32 @@ export default function Board({ rows, cols, mines, onGameOver, onWin, theme, the
     };
 
     return (
-        <div className="board">
-        <div className="game-info">
-            <p>Remain to find cats: {mines - flags}</p>
-        </div>
-        
-        <div className="grid">
-            {board.map((row, rowIndex) => (
-            <div key={rowIndex} className="row">
-                {row.map((cell, colIndex) => (
-                <Cell
-                    key={colIndex}
-                    cell={cell}
-                    onClick={() => revealCell(rowIndex, colIndex)}
-                    onContextMenu={() => toggleFlag(rowIndex, colIndex)}
-                />
+        <div className={`board theme-${theme}`}>
+            <div className="game-info">
+                <p>Remain to find: {mines - flags}</p>
+                {gameStarted && !gameOver && themeAssets.reset && (
+                    <button onClick={initializeGame} className="reset-btn">
+                        <img src={themeAssets.reset} alt="Reset" className="reset-image" />
+                    </button>
+                )}
+            </div>
+            
+            <div className="grid">
+                {board.map((row, rowIndex) => (
+                    <div key={rowIndex} className="row">
+                        {row.map((cell, colIndex) => (
+                            <Cell
+                                key={colIndex}
+                                cell={cell}
+                                onClick={() => revealCell(rowIndex, colIndex)}
+                                onContextMenu={() => toggleFlag(rowIndex, colIndex)}
+                                theme={theme}
+                                themeAssets={themeAssets}
+                            />
+                        ))}
+                    </div>
                 ))}
             </div>
-            ))}
-        </div>
         </div>
     );
-};
+}
