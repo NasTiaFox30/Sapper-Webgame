@@ -1,0 +1,31 @@
+.theme-selector {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background: #d4d4d4;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+    border-color: #666;
+}
+
+.theme-btn.active {
+    border-color: gold;
+    background: #525252;
+    box-shadow: 0 0 8px rgba(228, 196, 64, 0.5);
+}
