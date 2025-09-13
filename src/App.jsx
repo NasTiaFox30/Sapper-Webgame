@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Board from './components/Board';
+import ThemeSelector from './components/ThemeSelector';
 import './css/App.css';
 
 export default function App() {
