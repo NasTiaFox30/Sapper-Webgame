@@ -13,7 +13,7 @@ React + Vite
 
 
 ## Libraries:
-- framer-motion
+- gh-pages
 
 ## Visit site: 
 https://nastiafox30.github.io/Sapper-Webgame/
