@@ -3,6 +3,7 @@ import Board from './components/Board';
 import ThemeSelector from './components/ThemeSelector';
 import './css/App.css';
 import { themesConfig, getThemeAssets, getThemeAudio } from './themes/themesStorage';
+import Footer from './components/Footer';
 
 export default function App() {
   const [gameStatus, setGameStatus] = useState('playing');
@@ -152,6 +153,8 @@ export default function App() {
           themeAssets={themeAssets}
         />
       )}
+
+      <Footer/>
     </div>
   );
 }
